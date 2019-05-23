@@ -19,12 +19,20 @@ class MainWindow(QMainWindow):
     def __init__(self, parent=None):
 
         super(MainWindow, self).__init__(parent)
+        
+        #check if we should load a theme
+        try:
+            from config import theme
+            uifilename = 'mainwindow_' + theme + '.ui'
+        except ImportError:
+            uifilename = 'mainwindow.ui'
 
-        uifile = QFile(os.path.join(path, 'mainwindow.ui'))
+        uifile = QFile(os.path.join(path, uifilename))
         uifile.open(QFile.ReadOnly)
         loader = QUiLoader()
         self.ui = loader.load(uifile)
         uifile.close()
+
         self.setCentralWidget(self.ui)
         self.setWindowTitle(self.ui.windowTitle())
         self.setWindowIcon(self.ui.windowIcon())
@@ -73,7 +81,9 @@ if __name__ == "__main__":
         layout.setSpacing(10)
         label = QLabel(name)
         onButton = QPushButton('On')
+        onButton.setStyleSheet(mainWindow.ui.AllOnButton.styleSheet())
         offButton = QPushButton('Off')
+        offButton.setStyleSheet(mainWindow.ui.AllOnButton.styleSheet())
         
         layout.addWidget(onButton)
         layout.addWidget(offButton)

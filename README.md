@@ -14,6 +14,8 @@ It uses Lubomir Stroetmann's script available at https://github.com/softScheck/t
 
 Edit config.py to give names and IP addresses to your Kasa devices. An "all lights" entry will be added automatically.
 
+You can also uncomment the line "theme = 'dark'" to enable dark theme.
+
 ## Usage
 ### GUI
 

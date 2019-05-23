@@ -12,3 +12,6 @@ devices = {
     'Ceiling': '192.168.0.102',
     'Bedroom': '192.168.0.103',
 }
+
+# Uncomment the line below to enable dark mode
+#theme = 'dark'
