@@ -43,13 +43,13 @@ class MainWindow(QMainWindow):
         self.ui.AllOffButton.clicked.connect(partial(action, 'all', 'off'))
         
     def closeEvent(self, event):
-        settings = QSettings('Clem Lorteau', 'Kasa')
+        settings = QSettings('kasa', 'kasa')
         settings.setValue('geometry', self.saveGeometry())
         settings.setValue('windowState', self.saveState())
         event.accept()
 
     def readSettings(self):
-        settings = QSettings('Clem Lorteau', 'Kasa')
+        settings = QSettings('kasa', 'kasa')
         self.restoreGeometry(settings.value('geometry'))
         self.restoreState(settings.value('windowState'))
         
