@@ -4,6 +4,8 @@ This is a tiny desktop application that allows turning TP-Link Kasa smart plugs 
 
 It uses Lubomir Stroetmann's script available at https://github.com/softScheck/tplink-smartplug at its core.
 
+There's also a native Windows 10 only version at https://github.com/clorteau/Kasa.net.
+
 ## Pre-requisites
 
 * Python 3.x
